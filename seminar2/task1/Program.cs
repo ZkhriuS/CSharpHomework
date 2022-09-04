@@ -4,12 +4,18 @@
 void SecondDigit3(int value)
 {
     if (value > 99 && value < 1000)
-        Console.WriteLine($"second digit of {value} is {value / 10 % 10}");
+        Console.WriteLine($"Second digit of {value} is {value / 10 % 10}");
     else
         Console.WriteLine($"{value} is not a 3-digit number");
 }
 
-if (int.TryParse(Console.ReadLine(), out int myValue))
+string Prompt(string message)
+{
+    Console.Write(message);
+    return Console.ReadLine() ?? string.Empty;
+}
+if (int.TryParse(Prompt("Enter 3-digit number > "),
+            out int myValue))
     SecondDigit3(myValue);
 else
     Console.WriteLine("Not a number!");
