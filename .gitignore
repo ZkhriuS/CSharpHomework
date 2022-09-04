@@ -3,7 +3,7 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-CSharpHometask/seminar[3-5]
+seminar[3-5]/
 
 # User-specific files
 *.rsuser
@@ -350,3 +350,6 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+#Ignore directories
+seminar3/
