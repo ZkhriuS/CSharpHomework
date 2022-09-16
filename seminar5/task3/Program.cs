@@ -1,6 +1,12 @@
-﻿/* Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным
+﻿/* Задача 33: Задайте массив вещественных чисел. Найдите разницу между максимальным
 и минимальным элементом массива.
 [3 7 22 2 78] -> 76  */
+
+string Prompt(string message)
+{
+    Console.Write(message);
+    return Console.ReadLine() ?? string.Empty;
+}
 
 double[] CreateArray(int length)
 {
@@ -38,6 +44,11 @@ double DiffMaxMin(double[] array)
     return array[maxPosition] - array[minPosition];
 }
 
-double[] thisArray = CreateArray(new Random().Next(5, 20));
-PrintArray(thisArray);
-Console.WriteLine($" -> {DiffMaxMin(thisArray).ToString().Replace(',', '.')}");
+if (int.TryParse(Prompt("Enter length of array > "), out int size) && size > 0)
+{
+    double[] thisArray = CreateArray(size);
+    PrintArray(thisArray);
+    Console.WriteLine($" -> {DiffMaxMin(thisArray).ToString().Replace(',', '.')}");
+}
+else
+    Console.WriteLine("Array doesn't contain elements");
